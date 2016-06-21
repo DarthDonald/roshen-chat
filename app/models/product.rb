@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
     def search_by params = {}
       params = params.try(:symbolize_keys) || {}
 
-      collection = all
+      collection = page(params[:page])
 
       if params[:term].present?
         collection = collection.where('name ILIKE ?', "#{ params[:term]}%")
