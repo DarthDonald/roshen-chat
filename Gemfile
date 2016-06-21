@@ -39,3 +39,5 @@ end
 gem 'kaminari'
 gem 'draper', '~> 1.3'
 gem 'pg_search'
+gem 'bcrypt'
+gem 'email_validator'
