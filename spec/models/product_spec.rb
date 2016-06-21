@@ -4,7 +4,7 @@ RSpec.describe Product, type: :model do
   describe '.search_by' do
     let(:relation) { double }
 
-    before { expect(Product).to receive(:all).and_return(relation)}
+    before { expect(Product).to receive(:all).and_return(relation) }
 
     context do
       it { expect { Product.search_by }.to_not raise_error }
