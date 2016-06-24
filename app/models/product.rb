@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+  has_many :purchases
+
   include PgSearch
 
   pg_search_scope :search,

@@ -10,5 +10,4 @@ class ProductDecorator < Draper::Decorator
       description: description
     }
   end
-
 end

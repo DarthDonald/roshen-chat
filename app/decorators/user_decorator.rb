@@ -7,6 +7,5 @@ class UserDecorator < Draper::Decorator
       name: name,
       email: email
     }
-
   end
 end
