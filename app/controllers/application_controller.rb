@@ -42,6 +42,7 @@ class ApplicationController < ActionController::Base
 
   def destroy
     resource.destroy!
+    head :ok
   end
 
   private

@@ -4,7 +4,10 @@ class PurchaseDecorator < Draper::Decorator
 
   def as_json *args
     {
+      id: id,
       product_id: product_id,
+      user_id: user_id,
+      order_id: order_id,
       quantity: quantity
     }
   end

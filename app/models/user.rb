@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_one :auth_token, dependent: :destroy
 
   has_many :purchases
+  has_many :orders
 
   validates :name, presence: true
 
