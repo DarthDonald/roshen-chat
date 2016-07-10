@@ -1,6 +1,8 @@
 class Api::OrdersController < ApplicationController
 
-  def index
+  def update
+    OrderHandler.new(params.merge(current_user: current_user)).build
+
     render 'orders/index'
   end
 
@@ -15,11 +17,7 @@ class Api::OrdersController < ApplicationController
     @order
   end
 
-  def resource_params
-    params.require(:order).permit(:user_id, :sum, :status)
-  end
-
   def collection
-    @collection = Order.where(user_id: @current_user.id).page(params[:page]).per(5)
+    @collection ||= Order.where(user_id: @current_user.id).page(params[:page]).per(5)
   end
 end

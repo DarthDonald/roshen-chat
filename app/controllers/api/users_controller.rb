@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-  skip_before_action :authenticate
+  skip_before_action :authenticate, only: [:create]
 
   private
 
@@ -9,7 +9,8 @@ class Api::UsersController < ApplicationController
   end
 
   def resource
-    @user
+    current_user.increment(:balance,params[:user][:amount].to_i)
+    @user = current_user
   end
 
   def resource_params
