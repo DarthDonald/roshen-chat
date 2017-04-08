@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710104123) do
+ActiveRecord::Schema.define(version: 20160621114030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,48 +25,12 @@ ActiveRecord::Schema.define(version: 20160710104123) do
 
   add_index "auth_tokens", ["user_id"], name: "index_auth_tokens_on_user_id", using: :btree
 
-  create_table "gift_certificates", force: :cascade do |t|
-    t.integer  "amount",     default: 0
-    t.integer  "user_id"
-    t.integer  "order_id"
-    t.string   "token"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "status",     default: 0
-    t.integer  "sum",        default: 0
-    t.integer  "user_id"
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "price"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "purchases", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.integer  "order_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "balance",         default: 0
-    t.integer  "bonus_points",    default: 0
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_foreign_key "auth_tokens", "users"

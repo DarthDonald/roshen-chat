@@ -8,14 +8,16 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-
+  username: roshen
+  password: roshen552
+  
 development:
   <<: *default
-  database: shop_db
+  database: roshen_db
 
 test:
   <<: *default
-  database: shop_test
+  database: roshen_test
 
 production:
   <<: *default
