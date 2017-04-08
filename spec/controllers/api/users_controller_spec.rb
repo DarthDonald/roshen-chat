@@ -14,15 +14,15 @@ RSpec.describe Api::UsersController, type: :controller do
       }
     end
 
-    let(:user) { stub_model User}
+    let(:user) { stub_model User }
 
-    before { expect(User).to receive(:new).with(params).and_return(user)}
+    before { expect(User).to receive(:new).with(params).and_return(user) }
 
-    before { expect(user).to receive(:save!)}
+    before { expect(user).to receive(:save!) }
 
-    before { post :create, user: params, format: :json}
+    before { post :create, user: params, format: :json }
 
-    it { should render_template :create}
+    it { should render_template :create }
   end
 
 end

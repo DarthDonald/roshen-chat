@@ -9,8 +9,7 @@ class Api::UsersController < ApplicationController
   end
 
   def resource
-    current_user.increment(:balance,params[:user][:amount].to_i)
-    @user = current_user
+    @user
   end
 
   def resource_params
