@@ -1,0 +1,117 @@
+.chat-list{
+    font-family: Arial;
+    padding-top: 50px; 
+}
+.head{
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user{
+    background: #fff;
+    padding: 20px;
+    display: flex;
+}
+.user img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.user .name{
+    font-weight: 700;
+    font-size: 25px;
+    margin-right: 20px;
+}
+.user .mail{
+    font-size: 14px;
+    color: #999;
+}
+.user .status{
+    font-weight: 700;
+    font-size: 14px;
+    color: chartreuse;
+    margin-top: 6px;
+    cursor: pointer;
+}
+.user .status:before{
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background: chartreuse;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+h3{
+    color: #00a194;
+    font-size: 33px;
+    width: 700px;
+    margin: 36px auto 30px auto;
+}
+.list{
+    width: 700px;
+    margin: 0 auto;
+}
+.chat{
+    padding: 15px;
+    background: #fff;
+    display: flex;
+    position: relative;
+    margin-bottom: 15px;
+}
+.chat-photo{
+    height: 60px;
+    width: 60px;
+    background: 6px 8px url(img/chat-icon.png) no-repeat;
+    border-radius: 50%;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+.chat .name{
+    color: #000;
+    text-decoration: none;
+    font-size: 22px;
+}
+.chat .name:hover{
+    color: #00a194;
+    text-decoration: none;
+    font-size: 22px;
+}
+.chat-body{
+    width: 100%;
+    
+}
+.aditional{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.members{
+    background: 0px 2px url(img/members.png) no-repeat;
+    font-size: 12px;
+    padding: 3px 0;
+    padding-left: 29px;
+    color: red;
+}
+.admin{
+    font-size: 13px;
+    padding: 3px 0;
+    color: #999;
+}
+.admin a{
+    margin-left: 11px;
+    color: #88f;
+}
+.close{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: 0px 0px url(img/close.png);
+    background-size: cover;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
