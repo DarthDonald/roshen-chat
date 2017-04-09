@@ -19,14 +19,12 @@ export class SignInService {
                .catch(this.handleError);
   }
 
-  signOut(): () > {
-    return this.http.delete(this.signInUrl)
-               .then(response => response.json().data)
-               .catch(this.handleError);
+  signOut() {
+    return this.http.delete(this.signInUrl);
   }
 
   private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
+    console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
 

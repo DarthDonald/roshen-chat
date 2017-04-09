@@ -12,8 +12,13 @@ export class SignUpService {
     
   constructor(private http: Http) { }
 
-  sentUser(): Promise<SignUp[]> {
-    return this.http.post(this.signUpUrl)
+  sentUser(name, email, password, password_confirmation): Promise<SignUp[]> {
+    return this.http.post(this.signUpUrl, {
+                    name: name,
+                    email:email,
+                    password: password,
+                    password_confirmation: password_confirmation
+               })
                .toPromise()
                .then(response => response.json().data as SignUp)
                .catch(this.handleError);
