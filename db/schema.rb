@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621114030) do
+ActiveRecord::Schema.define(version: 20170408205014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,22 @@ ActiveRecord::Schema.define(version: 20160621114030) do
   end
 
   add_index "auth_tokens", ["user_id"], name: "index_auth_tokens_on_user_id", using: :btree
+
+  create_table "chats", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "admin_id"
+    t.text     "user_ids",   default: [],              array: true
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "chat_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -16,4 +16,8 @@ class Api::UsersController < ApplicationController
     params.require(:user).permit(:name, :password, :email, :password_confirmation)
   end
 
+  def collection
+    @users = User.all
+  end
+
 end
