@@ -20,22 +20,19 @@ export class ChatsService {
                .catch(this.handleError);
   }
 
-  createChats(): Promise<Chats[]> {
-    return this.http.post(this.chatsUrl)
+  createChats(chat): Promise<Chats[]> {
+    return this.http.post(this.chatsUrl, chat)
                .toPromise()
                .then(response => response.json().data as Chats)
                .catch(this.handleError);
   }
 
-  deleteChats(): Promise<Chats[]> {
-    return this.http.delete(this.chatUrl)
-               .toPromise()
-               .then(response => response.json().data as Chats)
-               .catch(this.handleError);
+  deleteChats() {
+    return this.http.delete(this.chatUrl);
   }
 
-  updateChats(): Promise<Chats[]> {
-    return this.http.patch(this.chatUrl)
+  updateChats(chat): Promise<Chats[]> {
+    return this.http.patch(this.chatUrl, chat)
                .toPromise()
                .then(response => response.json().data as Chats)
                .catch(this.handleError);

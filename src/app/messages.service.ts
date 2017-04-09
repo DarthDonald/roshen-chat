@@ -20,25 +20,22 @@ export class MessagesService {
                .catch(this.handleError);
     }
 
-    sentMessage(): Promise<Messages[]> {
-        return this.http.post(this.messagesUrl)
+    sentMessage(message): Promise<Messages[]> {
+        return this.http.post(this.messagesUrl, message)
                .toPromise()
                .then(response => response.json().data as Messages)
                .catch(this.handleError);
     }
 
-    editMessage(): Promise<Messages[]> {
-        return this.http.patch(this.messageUrl)
+    editMessage(message): Promise<Messages[]> {
+        return this.http.patch(this.messageUrl, message)
                .toPromise()
                .then(response => response.json().data as Messages)
                .catch(this.handleError);
     }
 
-    deleteMessage(): Promise<Messages[]> {
-        return this.http.delete(this.messageUrl)
-               .toPromise()
-               .then(response => response.json().data as Messages)
-               .catch(this.handleError);
+    deleteMessage() {
+        return this.http.delete(this.messageUrl);
     }
 
     private handleError(error: any): Promise<any> {
