@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::UsersController, type: :controller do
 
-  it { should route(:post, 'api/user').to(action: :create)}
+  it { should route(:post, 'api/users').to(action: :create) }
 
   describe '#create.json' do
     let(:params) do
